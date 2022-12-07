@@ -1,0 +1,25 @@
+body{
+  background-color: #cecece;
+}
+
+table{
+  /*width="270px"; cellspacing="0px" cellpadding="0px" border="1px"*/
+  width: 582px;
+  margin: 0 auto;
+  border: 3px solid #000000;
+  border-spacing: 0;
+}
+
+.white{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+}
+
+.black{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: #000000;
+}
