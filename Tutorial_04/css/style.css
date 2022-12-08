@@ -1,0 +1,49 @@
+.container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  display: block;
+  width: 300px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-left: auto;
+  padding: 10px;
+}
+
+button.login {
+  border: none;
+  background-color: rgb(70, 162, 243);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button.logout {
+  border: 1px solid #000000;
+  background-color: rgb(239, 77, 56);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  float: right;
+}
+
+a{
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
+  margin-right: 20px;
+  text-decoration: none;
+  float: left;
+}
+
+a:hover{
+  color: #12ff81;
+}
+
+a.active{
+  border-bottom: 1px dotted #0f17f9;
+}
