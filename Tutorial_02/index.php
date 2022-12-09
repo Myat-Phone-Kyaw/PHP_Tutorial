@@ -2,45 +2,45 @@
 function diamond($n)
 {
     $space = 6;
-    $forSpace = 0;
-    while ($forSpace < $n) {
-        $forStar = 0;
-        while ($forStar < $space) {
+    $row = 0;
+    while ($row < $n) {
+        $col = 0;
+        while ($col < $space) {
             echo " &nbsp;";
-            $forStar++;
+            $col++;
         }
 
-        $forStar = 0;
-        while ($forStar <= $forSpace) {
+        $col = 0;
+        while ($col <= $row) {
             echo "*";
-            $forStar++;
+            $col++;
         }
 
         echo "<br>";
         $space--;
-        $forSpace += 2;
+        $row += 2;
     }
 
     //Reverse
     $space = 2;
-    $forSpace = $n - 2;
-    while ($forSpace > 0) {
-        $forStar = 0;
-        while ($forStar < $space) {
+    $row = $n - 2;
+    while ($row > 0) {
+        $col = 0;
+        while ($col < $space) {
             echo " &nbsp;";
-            $forStar++;
+            $col++;
         }
 
-        $forStar = 0;
-        while ($forStar < $forSpace) {
+        $col = 0;
+        while ($col < $row) {
             echo "*";
-            $forStar++;
+            $col++;
         }
 
         echo "<br>";
         $space++;
 
-        $forSpace -= 2;
+        $row -= 2;
     }
 }
 
