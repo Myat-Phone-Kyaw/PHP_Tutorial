@@ -1,6 +1,7 @@
 <?php
 function diamond($n)
 {
+    //Triangle
     $space = 6;
     $row = 0;
     while ($row < $n) {
@@ -21,7 +22,7 @@ function diamond($n)
         $row += 2;
     }
 
-    //Reverse
+    //Reverse Triangle
     $space = 2;
     $row = $n - 2;
     while ($row > 0) {
