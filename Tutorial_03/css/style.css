@@ -1,0 +1,18 @@
+body{
+  text-align: center;
+}
+
+input.datepicker{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+input.submit{
+  display: block;
+  background-color: bisque;
+  width: 150px;
+  padding: 5px 0px;
+  border: 1px solid rgb(255, 187, 0);
+  margin: 10px auto;
+}
