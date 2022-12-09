@@ -5,6 +5,6 @@ if (isset($_POST['submit'])) {
     $date2 = date_create(date('Y-m-d'));
 
     $diff = date_diff($date1, $date2);
-    echo "You are " . $diff->format("%y year, %m month and %d days old.");
+    echo "You are " . $diff->format("%y year, %m month and %d days old. ");
 }
 ?>

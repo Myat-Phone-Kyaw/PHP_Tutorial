@@ -12,7 +12,7 @@
   <h1>Age Calculator</h1>
   <div class="container">
     <form action="" method="POST">
-      <labelx>Choose the date</labelx>
+      <label>Choose the date</label>
       <input type="date" name="calDate" max="<?= date('Y-m-d'); ?>" class="datepicker">
 
       <input type="submit" name="submit" value="Calculate date" class="submit">

@@ -12,7 +12,8 @@ input.submit{
   display: block;
   background-color: bisque;
   width: 150px;
-  padding: 5px 0px;
+  padding: 7px 0px;
   border: 1px solid rgb(255, 187, 0);
   margin: 10px auto;
+  border-radius: 5px;
 }
