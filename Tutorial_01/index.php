@@ -11,7 +11,7 @@
 <table>
     <?php
     $col = 0;
-
+ 
     while ($col < 8) 
     {
         $row = 0;
