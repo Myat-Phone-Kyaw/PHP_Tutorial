@@ -8,25 +8,20 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<table>
+<table class="chess">
     <?php
     $col = 0;
- 
-    while ($col < 8) 
-    {
+
+    while ($col < 8) {
         $row = 0;
         echo "<tr>";
         $value = $col;
 
-        while ($row < 8)
-        {
-            if ($value % 2 == 0)
-            {
+        while ($row < 8) {
+            if ($value % 2 == 0) {
                 echo '<td class="white"></td>';
                 $value++;
-            }
-            else 
-            {
+            } else {
                 echo '<td class="black"></td>';
                 $value++;
             }

@@ -2,7 +2,7 @@ body {
   background-color: #cecece;
 }
 
-table {
+table.chess {
   width: 582px;
   margin: 0 auto;
   border: 3px solid #000000;
