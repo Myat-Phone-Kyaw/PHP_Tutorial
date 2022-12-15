@@ -21,6 +21,7 @@
         $getFolder = $_POST["folder"];
         $getImage = $_FILES['image']['name'];
         $getTmp = $_FILES['image']['tmp_name'];
+        $fileSize = $_FILES['image']['size'];
         if (empty($getFolder) || empty($getImage)) {
             if (empty($getFolder)) {
                 $errorFolder = "Enter Folder Name!!!";
@@ -42,12 +43,14 @@
             } else {
                 $validExtError = "Choose Image File";
             }
+        } elseif (($_FILES["file-input"]["size"] > 200000)) {
+            $validExtError = "Your file is too large";
         }
     }
     ?>
     <div class="container">
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             <div class="group">
                 Folder Name: <input type="text" name="folder" placeholder="Folder Name" value="<?php echo $getFolder; ?>" maxlength="15"><br>
                 <caption>
@@ -79,7 +82,7 @@
             foreach ($images as $image) {
                 echo "<tr>";
                 echo "<td>";
-                echo '<img class="images" src="' . $image . '"><br>';
+                echo '<img class="images" src="$image"><br>';
                 echo "</td>";
                 echo "<td><h3>" . $image . "</h3></td>";
                 echo "<td>";

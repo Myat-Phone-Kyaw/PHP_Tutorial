@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <a href="Home.php">Home Page</a>
-  <a href="Contact.php">Contact Page</a>
+  <a href="home.php">Home Page</a>
+  <a href="contact.php">Contact Page</a>
 
   <form action="logout.php" method="POST">
     <button type="submit" name="logout" class="logout">Logout</button>

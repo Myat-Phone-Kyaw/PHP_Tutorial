@@ -17,8 +17,8 @@ include('login.php');
   <div class="container">
     <h1>Form</h1>
     <form action="<?php $_PHP_SELF ?>" method="POST">
-      <input type="email" placeholder="Emal" name="email" required>
-      <input type="password" placeholder="Password" name="password" required>
+      <input type="email" placeholder="Emal" name="email">
+      <input type="password" placeholder="Password" name="password">
 
       <button type="submit" name="login" class="login">Login</button>
     </form>

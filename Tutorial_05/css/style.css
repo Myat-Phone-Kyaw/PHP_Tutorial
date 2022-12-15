@@ -1,17 +1,19 @@
-*{
+* {
   box-sizing: border-box;
 }
-h2{
-  font-size: 24px;
+
+h2 {
   margin: 15px 0;
   color: #f7b100;
-}
-.container{
-  max-width: 1000px;
-  margin: 0 auto;
+  font-size: 24px;
 }
 
-table td{
-  border: 1px solid #000000;
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+table td {
   padding: 3px;
+  border: 1px solid #000000;
 }

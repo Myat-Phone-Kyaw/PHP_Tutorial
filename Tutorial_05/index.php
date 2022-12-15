@@ -46,30 +46,38 @@
     $csv_data = $csv->getActiveSheet()->toArray();
     ?>
     <div class="container">
-    <h2>Text file .txt</h2>
-    <p><?php echo $txt; ?></p>
-    <h2>Document word file .doc</h2>
-    <p><?php echo $content; ?></p>
-    <h2>Excel file .xlsx</h2>
-    <table>
-        <?php foreach ($excel_data as $excel) { ?>
+        <h2>Text file .txt</h2>
+        <p>
+            <?php echo $txt; ?>
+        </p>
+        <h2>Document word file .doc</h2>
+        <p>
+            <?php echo $content; ?>
+        </p>
+        <h2>Excel file .xlsx</h2>
+        <table>
+            <?php foreach ($excel_data as $excel) { ?>
             <tr>
                 <?php foreach ($excel as $key => $value) { ?>
-                    <td><?php echo $value; ?></td>
+                <td>
+                    <?php echo $value; ?>
+                </td>
                 <?php } ?>
             </tr>
-        <?php } ?>
-    </table>
-    <h2>.csv</h2>
-    <table>
-        <?php foreach ($csv_data as $comma) { ?>
+            <?php } ?>
+        </table>
+        <h2>.csv</h2>
+        <table>
+            <?php foreach ($csv_data as $comma) { ?>
             <tr>
                 <?php foreach ($comma as $key => $value) { ?>
-                    <td><?php echo $value; ?></td>
+                <td>
+                    <?php echo $value; ?>
+                </td>
                 <?php } ?>
             </tr>
-        <?php } ?>
-    </table>
+            <?php } ?>
+        </table>
     </div>
 </body>
 
