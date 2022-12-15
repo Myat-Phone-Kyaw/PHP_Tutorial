@@ -27,10 +27,10 @@
                         <div class="card-title">Post Detail</div>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
+                        <div class="form-group mb-1">
                             <?php echo '<b>' . $title . '</b>'; ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <?php
                                 if ($publish == 1) {
                                     echo 'Published at ' . $create;
@@ -39,7 +39,7 @@
                                 }
                             ?>
                         </div>
-                        <div class="form-group content">
+                        <div class="form-group mb-3 content">
                             <?php echo $content; ?>
                         </div>
                         <div class="col-md-6"><a href="index.php" class="btn btn-secondary">Back</a></div>

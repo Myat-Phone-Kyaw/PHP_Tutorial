@@ -45,15 +45,15 @@
                     <div class="card-body">
                         <form action="edit.php" method="POST">
                             <input type="hidden" name="post_id" value="<?php echo $titleId; ?>">
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label>Title</label>
                                 <input type="text" name="title" placeholder="name@example.com" class="form-control" value="<?php echo $title; ?>">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label>Content</label>
                                 <textarea name="content" class="form-control"><?php echo $content ?></textarea>
                             </div>
-                            <div class="form-group mt-2">
+                            <div class="form-group mb-3">
                                 <input type="hidden" name="publish" value="0">
                                 <input type="checkbox" name="publish" value="1"> publish
                             </div>

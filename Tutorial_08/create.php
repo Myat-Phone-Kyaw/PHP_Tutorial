@@ -42,21 +42,21 @@
                     </div>
                     <div class="card-body">
                         <form action="create.php" method="POST">
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label>Title</label>
                                 <input type="text" name="title" class="form-control" placeholder="Enter post title">
                                 <span class="text-danger">
                                     <?php echo $titleError ?>
                                 </span>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label>Content</label>
                                 <textarea name="content" class="form-control" placeholder="Content..."></textarea>
                                 <span class="text-danger">
                                     <?php echo $contentError ?>
                                 </span>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <input type="hidden" name="publish" value="0">
                                 <input type="checkbox" name="publish" value="1"> publish
                             </div>
