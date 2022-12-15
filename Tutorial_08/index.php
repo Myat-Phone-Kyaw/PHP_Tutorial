@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-md-12">
         <a href="create.php" class="btn btn-primary">Create</a>
-        <div class="card">
+        <div class="card mt-5">
           <div class="card-header">
             <div class="card-title">Post List</div>
           </div>

@@ -53,11 +53,11 @@
                                 <label>Content</label>
                                 <textarea name="content" class="form-control"><?php echo $content ?></textarea>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-2">
                                 <input type="hidden" name="publish" value="0">
                                 <input type="checkbox" name="publish" value="1"> publish
                             </div>
-                            <div class="row">
+                            <div class="row mt-2">
                                 <div class="col-md-11"><a href="index.php" class="btn btn-secondary">Back</a></div>
                                 <div class="col-md-1"><button type="submit" name="update-btn" class="btn btn-primary">Update</button></div>
                             </div>
