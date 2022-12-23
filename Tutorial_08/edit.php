@@ -5,34 +5,50 @@
 
 <body>
     <?php
-        require "connect.php";
+    require "connect.php";
 
-        if (isset($_GET['postId'])) {
-            $postid_to_update = $_GET['postId'];
+    if (isset($_GET['postId'])) {
+        $postid_to_update = $_GET['postId'];
 
-            $query = "SELECT * FROM posts WHERE id=$postid_to_update";
-            $post = mysqli_query($db, $query);
+        $query = "SELECT * FROM posts WHERE id=$postid_to_update";
+        $post = mysqli_query($db, $query);
 
-            if (mysqli_num_rows($post) == 1) {
-                foreach ($post as $row) {
-                    $titleId = $row['id'];
-                    $title = $row['title'];
-                    $content = $row['content'];
-                }
+        if (mysqli_num_rows($post) == 1) {
+            foreach ($post as $row) {
+                $titleId = $row['id'];
+                $title = $row['title'];
+                $content = $row['content'];
             }
         }
+    }
 
-        //Update
-        if (isset($_POST['update-btn'])) {
-            $post_Id = $_POST['post_id'];
-            $title = $_POST['title'];
-            $content = $_POST['content'];
-            $publish = $_POST['publish'];
+    //Update
+    $titleError = '';
+    $contentError = '';
+    $title = $row['title'];
+    $content = $row['content'];
+    if (isset($_POST['update-btn'])) {
+        $post_Id = $_POST['post_id'];
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+        $publish = $_POST['publish'];
 
+        if (empty($title)) {
+            $titleError = "Enter post title";
+        }
+
+        if (empty($content)) {
+            $contentError = "Enter your content";
+        }
+
+        if (!empty($title) && !empty($content)) {
             $query = "UPDATE posts SET title='$title', content='$content', is_published='$publish', updated_datetime=current_timestamp() WHERE id=$post_Id";
             mysqli_query($db, $query);
             header('location: index.php');
         }
+
+    }
+
 
     ?>
     <div class="container">
@@ -49,10 +65,16 @@
                                 <label>Title</label>
                                 <input type="text" name="title" placeholder="name@example.com" class="form-control" value="<?php echo $title; ?>">
                             </div>
+                            <span class="text-danger">
+                                <?php echo $titleError ?>
+                            </span>
                             <div class="form-group mb-3">
                                 <label>Content</label>
                                 <textarea name="content" class="form-control"><?php echo $content ?></textarea>
                             </div>
+                            <span class="text-danger">
+                                <?php echo $contentError ?>
+                            </span>
                             <div class="form-group mb-3">
                                 <input type="hidden" name="publish" value="0">
                                 <input type="checkbox" name="publish" value="1"> publish

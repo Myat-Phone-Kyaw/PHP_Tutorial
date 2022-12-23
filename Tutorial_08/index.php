@@ -16,14 +16,14 @@
             <div class="card-title">Post List</div>
           </div>
           <div class="card-body">
-            <table class="table">
+            <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Title</th>
-                  <th>Content</th>
-                  <th>Is Published</th>
-                  <th>Created Date</th>
+                  <th id="id">ID</th>
+                  <th id="title">Title</th>
+                  <th id="content">Content</th>
+                  <th id="publish">Is Published</th>
+                  <th id="date">Created Date</th>
                   <th>Actions</th>
                 </tr>
               </thead>

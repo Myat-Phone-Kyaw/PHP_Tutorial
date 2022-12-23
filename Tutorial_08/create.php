@@ -8,6 +8,8 @@
         require "connect.php";
         $titleError = '';
         $contentError = '';
+        $title = '';
+        $content = '';
 
         if (isset($_POST['create-btn'])) {
             $title = $_POST['title'];
@@ -44,14 +46,14 @@
                         <form action="create.php" method="POST">
                             <div class="form-group mb-3">
                                 <label>Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Enter post title">
+                                <input type="text" name="title" class="form-control" placeholder="Enter post title" value="<?php echo $title ?>">
                                 <span class="text-danger">
                                     <?php echo $titleError ?>
                                 </span>
                             </div>
                             <div class="form-group mb-3">
                                 <label>Content</label>
-                                <textarea name="content" class="form-control" placeholder="Content..."></textarea>
+                                <textarea name="content" class="form-control" placeholder="Content..." cols="30" rows="5"><?php echo $content; ?></textarea>
                                 <span class="text-danger">
                                     <?php echo $contentError ?>
                                 </span>
@@ -60,6 +62,7 @@
                                 <input type="hidden" name="publish" value="0">
                                 <input type="checkbox" name="publish" value="1"> publish
                             </div>
+                            
                             <div class="row">
                                 <div class="col-md-11"><a href="index.php" class="btn btn-secondary">Back</a></div>
                                 <div class="col-md-1"><button type="submit" name="create-btn" class="btn btn-primary">Create</button></div>
