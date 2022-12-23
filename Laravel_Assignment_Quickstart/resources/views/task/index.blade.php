@@ -46,12 +46,13 @@
                     <td>{{ $task->id }}</td>
                     <td>{{ $task->name }}</td>
                     <td>
+                        <a href="{{ route('task.edit',$task->id) }}" class="text-decoration-none">
+                            <button class="btn btn-warning btn-sm">Edit</button>
+                        </a>
                         <form action="{{ route('task.destroy',$task->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <a href="{{ route('task.edit',$task->id) }}" class="text-decoration-none">
-                                <button class="btn btn-warning btn-sm">Edit</button>
-                            </a>
+                            
                             <button class="btn btn-danger btn-sm" onclick='return confirm("Are you sure to delete?")'>
                                 Delete
                             </button>
