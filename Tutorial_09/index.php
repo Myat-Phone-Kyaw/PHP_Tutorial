@@ -20,11 +20,11 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Title</th>
-                  <th>Content</th>
-                  <th>Is Published</th>
-                  <th>Created Date</th>
+                  <th class="id">ID</th>
+                  <th class="title">Title</th>
+                  <th class="content">Content</th>
+                  <th class="publish">Is Published</th>
+                  <th class="date">Created Date</th>
                   <th>Actions</th>
                 </tr>
               </thead>

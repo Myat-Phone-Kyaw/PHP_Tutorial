@@ -10,3 +10,23 @@ body {
   color: #cecece;
   font-style: italic;
 }
+
+.id{
+  width: 5%;
+}
+
+.title{
+  width: 10%;
+}
+
+.content{
+  width: 40%;
+}
+
+.publish{
+  width: 10%;
+}
+
+.date{
+  width: 12%;
+}
