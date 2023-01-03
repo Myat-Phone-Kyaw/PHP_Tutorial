@@ -5,29 +5,31 @@
 
 <body>
     <?php
-        require "connect.php";
+    require "connect.php";
 
-        for ($day = 3; $day <= 9; $day++) {
-            $keys[] = date('l', mktime(0, 0, 0, 1, $day, date('Y')));
-        }
-        $calendar = array_fill_keys($keys, "0");
+    for ($day = 3; $day <= 9; $day++) {
+        $keys[] = date('l', mktime(0, 0, 0, 1, $day, date('Y')));
+    }
+    $calendar = array_fill_keys($keys, "0");
 
-        $query = "SELECT dayname(created_datetime) as day, count(id) as count from posts where week(created_datetime)=week(now()) group by dayname(created_datetime)";
+    $query = "SELECT dayname(created_datetime) as day, count(id) as count from posts where week(created_datetime)=week(now()) group by dayname(created_datetime)";
 
-        $result = mysqli_query($db, $query);
+    $result = mysqli_query($db, $query);
 
-        while ($post = mysqli_fetch_assoc($result)) {
-            $days[] = $post['day'];
-            $count[] = $post['count'];
-        }
+    $days = [];
+    $count = [];
+    while ($post = mysqli_fetch_assoc($result)) {
+        $days[] = $post['day'];
+        $count[] = $post['count'];
+    }
 
-        $fetched_data = array_combine($days, $count);
-        $merge = array_merge($calendar, $fetched_data);
+    $fetched_data = array_combine($days, $count);
+    $merge = array_merge($calendar, $fetched_data);
 
-        foreach ($merge as $key => $value) {
-            $label[] = $key;
-            $data[] = $value;
-        }
+    foreach ($merge as $key => $value) {
+        $label[] = $key;
+        $data[] = $value;
+    }
     ?>
 
 
@@ -43,34 +45,33 @@
             <div>
                 <canvas id="myChart"></canvas>
             </div>
-
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-            <script>
-                const ctx = document.getElementById('myChart');
-                const labels = <?php echo json_encode($label) ?>;
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: '# Weekly Created Post',
-                            data: <?php echo json_encode($data) ?>,
-                            borderWidth: 1
-            }]
-                },
-                    options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-        });
-            </script>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+        const labels = <?php echo json_encode($label) ?>;
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# Weekly Created Post',
+                    data: <?php echo json_encode($data??$data) ?>,
+                    borderWidth: 1
+            }]
+        },
+            options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+        });
+    </script>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
