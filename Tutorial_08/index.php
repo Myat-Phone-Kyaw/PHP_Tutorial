@@ -1,12 +1,19 @@
 <?php require "connect.php"; ?>
 
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
 
 <body>
-
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -29,33 +36,33 @@
               </thead>
               <tbody>
                 <?php
-                    $query = "SELECT * FROM posts";
-                    $result = mysqli_query($db, $query);
+                $query = "SELECT * FROM posts";
+                $result = mysqli_query($db, $query);
 
-                    foreach ($result as $row) {
+                foreach ($result as $row) {
                 ?>
-                    <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['title']; ?></td>
-                    <td><?php echo $row['content']; ?></td>
-                    <td>
-                        <?php 
-                            if($row['is_published']==1){
-                            echo 'Published';
-                            }else{
-                            echo 'Unpublished';
-                            }
+                <tr>
+                  <td><?php echo $row['id']; ?></td>
+                  <td><?php echo $row['title']; ?></td>
+                  <td><?php echo $row['content']; ?></td>
+                  <td>
+                    <?php
+                  if ($row['is_published'] == 1) {
+                    echo 'Published';
+                  } else {
+                    echo 'Unpublished';
+                  }
                         ?>
-                    </td>
-                    <td><?php echo $row['created_datetime'];?></td>
-                    <td>
-                        <a href="view.php?postId=<?php echo $row['id']; ?>" class="btn btn-info">View</a>
-                        <a href="edit.php?postId=<?php echo $row['id']; ?>" class="btn btn-success">Edit</a>
-                        <a href="index.php?postId_to_delete=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
-                    </td>
-                    </tr>
+                  </td>
+                  <td><?php echo $row['created_datetime']; ?></td>
+                  <td>
+                    <a href="view.php?postId=<?php echo $row['id']; ?>" class="btn btn-info">View</a>
+                    <a href="edit.php?postId=<?php echo $row['id']; ?>" class="btn btn-success">Edit</a>
+                    <a href="index.php?postId_to_delete=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                  </td>
+                </tr>
                 <?php
-                    }
+                }
                 ?>
 
               </tbody>
@@ -67,19 +74,18 @@
   </div>
 
   <!-- Delete -->
-    <?php
-        if(isset($_GET['postId_to_delete'])){
-            $postId_to_delete = $_GET['postId_to_delete'];
+  <?php
+    if (isset($_GET['postId_to_delete'])) {
+      $postId_to_delete = $_GET['postId_to_delete'];
 
-            $query = "DELETE FROM posts WHERE id=$postId_to_delete";
-            $delete = mysqli_query($db, $query);
-            header('location: index.php');
-        }
+      $query = "DELETE FROM posts WHERE id=$postId_to_delete";
+      mysqli_query($db, $query);
+      header("location:index.php");
+    }
     ?>
-
-
-
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
+
+</html>

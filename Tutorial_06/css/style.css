@@ -16,23 +16,23 @@ body {
   border-radius: 5px;
 }
 
-h1 {
+h1.h1 {
   margin: 0 auto;
   color: #9ef69e;
   text-align: center;
 }
 
-h2 {
+h2.h2 {
   margin: 0 auto;
   color: #ff8000;
   text-align: center;
 }
 
-h form {
+form.form {
   margin-bottom: 70px;
 }
 
-caption {
+caption.cap {
   display: inline-block;
   color: #fffb00;
 }
@@ -41,25 +41,25 @@ caption {
   margin: 10px 0px;
 }
 
-input {
+.input {
   padding: 10px;
   border: none;
   outline: none;
   border-radius: 10px;
 }
 
-table {
+.table {
   width: 500px;
   margin: 0 auto;
 }
 
-td {
+.td {
   padding-left: 5px;
   border: 1px solid #000000;
   vertical-align: middle;
 }
 
-button {
+.button {
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -73,7 +73,7 @@ button {
   border-radius: 10px;
 }
 
-button:hover {
+.button:hover {
   background-color: #f0f8ff;
   color: #ff6347;
 }
@@ -84,6 +84,6 @@ button:hover {
   margin-left: 20%;
 }
 
-a {
+.a {
   text-decoration: none;
 }
